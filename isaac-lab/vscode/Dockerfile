@@ -51,6 +51,12 @@ RUN mkdir -p /home/root/.local/share/ov
 RUN chown root:root /home/root/.cache/ov
 RUN chown root:root /home/root/.local/share/ov
 
+RUN cd workspace && \
+	git clone https://github.com/LightwheelAI/leisaac.git && \
+	cd leisaac && \
+	python3 -m pip install --no-cache-dir -e source/leisaac && \
+	cd .. && \
+	cd ..
 
 ENTRYPOINT ["/bin/bash"]
 
