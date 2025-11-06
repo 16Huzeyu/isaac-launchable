@@ -57,9 +57,9 @@ RUN cd /workspace && \
 	cd leisaac 
 
 RUN cd /workspace/leisaac/assets/robots && \
-	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.0/so101_follower.usd -o so101_follower.usd	&& \
+	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.0/so101_follower.usd -O so101_follower.usd	&& \
 	cd /workspace/leisaac/assets/scenes && \
-	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.0/kitchen_with_orange.zip -o kitchen_with_orange.zip && \
+	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.0/kitchen_with_orange.zip -O kitchen_with_orange.zip && \
 	unzip kitchen_with_orange.zip && \
 	cd.. && \
 	cd.. && \
