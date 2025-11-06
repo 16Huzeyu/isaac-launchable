@@ -69,6 +69,7 @@ CMD ["/entrypoint.sh"]
 RUN cd /workspace && \
 	git clone https://github.com/LightwheelAI/leisaac.git && \
 	cd leisaac && \
-    python -m pip install --no-cache-dir -e source/leisaac  && \
+	python3 -m pip install --upgrade setuptools wheel && \
+    python3 -m pip install --no-cache-dir -e source/leisaac && \
 	cd .. && \
 	cd ..
