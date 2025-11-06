@@ -31,11 +31,6 @@ RUN apt update && \
 	unzip \
 	dnsutils \
 	iproute2 \
-    python-is-python3 \
-    python3.11-dev \
-    python3-pip \
-    python3-tk \
-
 	jq
 
 ENV WORKSPACE_DIR=/workspace
@@ -56,13 +51,15 @@ RUN mkdir -p /home/root/.local/share/ov
 RUN chown root:root /home/root/.cache/ov
 RUN chown root:root /home/root/.local/share/ov
 
+
+
+ENTRYPOINT ["/bin/bash"]
+
+CMD ["/entrypoint.sh"]
+
 RUN cd /workspace && \
 	git clone https://github.com/LightwheelAI/leisaac.git && \
 	cd leisaac && \
     python3 -m pip install --no-cache-dir -e source/leisaac  && \
 	cd .. && \
 	cd ..
-
-ENTRYPOINT ["/bin/bash"]
-
-CMD ["/entrypoint.sh"]
