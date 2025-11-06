@@ -62,7 +62,7 @@ RUN cd /workspace/leisaac/assets/robots && \
 	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.0/kitchen_with_orange.zip -O kitchen_with_orange.zip && \
 	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.2/table_with_cube.zip && \
 	wget https://lightwheel.ai/cdn/upload-file/2025-10-27-k0QSo7z0mslightwheel_bedroom.zip -O lightwheel_bedroom.zip && \
-	wget https://lightwheel.ai/cdn/upload-file/2025-07-18-BddImJA8hPlightwheel_toyroom.zip -O lightwheel_toyroom.zip && 
+	wget https://lightwheel.ai/cdn/upload-file/2025-07-18-BddImJA8hPlightwheel_toyroom.zip -O lightwheel_toyroom.zip
 
 RUN cd /workspace/leisaac/assets/scenes && \
 	unzip kitchen_with_orange.zip && \
