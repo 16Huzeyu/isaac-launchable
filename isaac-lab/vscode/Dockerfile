@@ -54,11 +54,11 @@ RUN chown root:root /home/root/.local/share/ov
 
 RUN cd /workspace && \
 	git clone https://github.com/LightwheelAI/leisaac.git && \
-	cd leisaac 
-
-RUN cd /workspace/leisaac/assets/robot && \
+	cd leisaac && \
+	cd assets/robot && \
 	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.0/so101_follower.usd -o so101_follower.usd	&& \
-	cd /workspace/leisaac/assets/scenes && \
+	cd.. && \
+	cd scenes && \
 	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.0/kitchen_with_orange.zip -o kitchen_with_orange.zip && \
 	unzip kitchen_with_orange.zip && \
 	cd.. && \
