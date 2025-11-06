@@ -22,6 +22,15 @@ RUN apt update && \
 	build-essential \
 	cmake \
 	curl \
+    python-is-python3 \
+    python3.11-dev \
+    python3-pip \
+    python3-tk \
+    qtbase5-dev \
+    sudo \
+    tmux \
+    vim \
+    wget \
 	git
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh -s -- --version=4.96.4
@@ -60,6 +69,6 @@ CMD ["/entrypoint.sh"]
 RUN cd /workspace && \
 	git clone https://github.com/LightwheelAI/leisaac.git && \
 	cd leisaac && \
-    python3 -m pip install --no-cache-dir -e source/leisaac  && \
+    python -m pip install --no-cache-dir -e source/leisaac  && \
 	cd .. && \
 	cd ..
