@@ -31,6 +31,11 @@ RUN apt update && \
 	unzip \
 	dnsutils \
 	iproute2 \
+    python-is-python3 \
+    python3.11-dev \
+    python3-pip \
+    python3-tk \
+
 	jq
 
 ENV WORKSPACE_DIR=/workspace
