@@ -63,9 +63,9 @@ RUN cd /workspace/leisaac/assets/robots && \
 	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.2/table_with_cube.zip && \
 	wget https://lightwheel.ai/cdn/upload-file/2025-10-27-k0QSo7z0mslightwheel_bedroom.zip -O lightwheel_bedroom.zip && \
 	wget https://lightwheel.ai/cdn/upload-file/2025-07-18-BddImJA8hPlightwheel_toyroom.zip -O lightwheel_toyroom.zip && \
-	cd.. && \
-	cd.. && \
-	cd..
+	cd .. && \
+	cd .. && \
+	cd ..
 	
 ENTRYPOINT ["/bin/bash"]
 
