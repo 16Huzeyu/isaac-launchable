@@ -22,15 +22,7 @@ RUN apt update && \
 	build-essential \
 	cmake \
 	curl \
-    python-is-python3 \
-    python3.11-dev \
-    python3-pip \
-    python3-tk \
-    qtbase5-dev \
-    sudo \
-    tmux \
-    vim \
-    wget \
+	wget \
 	git
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh -s -- --version=4.96.4
@@ -60,16 +52,20 @@ RUN mkdir -p /home/root/.local/share/ov
 RUN chown root:root /home/root/.cache/ov
 RUN chown root:root /home/root/.local/share/ov
 
+RUN cd workspace && \
+	git clone https://github.com/LightwheelAI/leisaac.git && \
+	cd leisaac 
 
-
+RUN cd assets/robot && \
+	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.0/so101_follower.usd -o so101_follower.usd	&& \
+	cd.. && \
+	cd scenes && \
+	wget https://github.com/LightwheelAI/leisaac/releases/download/v0.1.0/kitchen_with_orange.zip -o kitchen_with_orange.zip && \
+	unzip kitchen_with_orange.zip && \
+	cd.. && \
+	cd.. && \
+	cd..
+	
 ENTRYPOINT ["/bin/bash"]
 
 CMD ["/entrypoint.sh"]
-
-RUN cd /workspace && \
-	git clone https://github.com/LightwheelAI/leisaac.git && \
-	cd leisaac && \
-	python3 -m pip install --upgrade setuptools wheel && \
-    python3 -m pip install --no-cache-dir -e source/leisaac && \
-	cd .. && \
-	cd ..
