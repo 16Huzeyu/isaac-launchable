@@ -66,6 +66,9 @@ RUN cd /workspace/leisaac/assets/robots && \
 
 RUN cd /workspace/leisaac/assets/scenes && \
 	unzip kitchen_with_orange.zip && \
+	unzip table_with_cube.zip && \
+	unzip lightwheel_bedroom.zip && \
+	unzip lightwheel_toyroom.zip && \
 	cd .. && \
 	cd .. && \
 	cd ..
